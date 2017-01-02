@@ -26,6 +26,7 @@
         <link rel="stylesheet" href="css/jquery.jqplot.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="js/apiCalls.js"></script>
+        <script src="js/canvasjs.min.js"></script>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -77,6 +78,7 @@
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                     <h1 class="page-header">Dashboard for JSON data: <a href="https://api.github.com/users/andrewarrow/repos" target='_blank'>Andrew's Github</a></h1>
 
+	<div id="chartContainer" style="height: 400px; width: 100%;"></div>
                     <div class="row placeholders">
                         <div class="col-xs-6 col-sm-3 placeholder">
                             <p id="descText"></p>
@@ -122,6 +124,31 @@
         <script src="../../assets/js/vendor/holder.min.js"></script>
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script type="text/javascript">
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+		title:{
+			text: "Pie Chart"
+		},
+		data: [
+		{
+			type: "pie",
+			dataPoints: [
+				{ y: 4181563},
+				{ y: 2175498},
+				{ y: 3125844},
+				{ y: 1176121},
+				{ y: 1727161},
+				{ y: 4303364},
+				{ y: 1717786}
+			]
+		}
+		]
+	});
+	chart.render();
+}
+	</script>
     </body>
 </html>
 
