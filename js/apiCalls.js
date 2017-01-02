@@ -29,8 +29,8 @@ function appendAttributeAmounts() {
             $("#generatedTableBody").append(
                     "<tr> \n\
                      <td>" + columnRow + "</td>\n\
-                     <td> " + result[i].description + "</td>\n\
-                     <td> " + result[i].homepage + "</td>\n\
+                     <td> " + result[i].name + ": " + result[i].description + "</td>\n\
+                     <td><a href=\"" + result[i].homepage + "\">" + result[i].homepage + "</a></td>\n\
                      <td> " + result[i].fork + "</td>\n\
                      <td> " + result[i].language + "</td>\n\
                     </tr>"
